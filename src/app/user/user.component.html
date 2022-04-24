@@ -1,0 +1,22 @@
+<h1 class="center">{{ title }}</h1>
+
+<div class="container">
+  <!-- par defaut row 12unités de large -->
+  <div class="row">
+    <div *ngFor="let user of userList" class="col m4 s6">
+      <div class="card horizontal" pokemonBorderCard>
+        <div class="card-image">
+          <img class="responsive-img" [src]="user.avatar" />
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <p>Pseudo: {{ user.pseudo | uppercase }}</p>
+            <p>Email: {{ user.email }}</p>
+            <p>Niveau: {{ user.niveau }}</p>
+            <p>Password: {{ user?.password }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

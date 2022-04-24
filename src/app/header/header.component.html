@@ -1,0 +1,24 @@
+<nav class="grey darken-3">
+  <div>
+    <a routerLink="/" class="brand-logo">Angular Project</a>
+  </div>
+  <div>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li>
+        <a routerLink="user">liste utilisateurs</a>
+      </li>
+      <li>
+        <a routerLink="article">liste articles</a>
+      </li>
+      <li>
+        <a routerLink="comment">liste commentaires</a>
+      </li>
+      <li>
+        <a routerLink="login">connexion</a>
+      </li>
+      <li>
+        <a (click)="onLogout()">deconnexion</a>
+      </li>
+    </ul>
+  </div>
+</nav>

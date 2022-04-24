@@ -1,0 +1,67 @@
+<h1 class="center">
+  Modification de
+  <span>
+    <b>{{ article?.titre | uppercase }}</b>
+  </span>
+</h1>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card horizontal">
+        <form
+          [formGroup]="updateForm"
+          (ngSubmit)="onSubmitUpdate(updateForm.value)"
+        >
+          <div class="card-stacked">
+            <div class="card-content">
+              <div>
+                <label for="name">Titre</label>
+                <input
+                  type="text"
+                  id="titre"
+                  name="titre"
+                  formControlName="titre"
+                  [value]="article?.titre"
+                />
+              </div>
+              <div>
+                <label for="name">Contenu</label>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <textarea
+                      class="materialize-textarea"
+                      id="contenu"
+                      name="contenu"
+                      formControlName="contenu"
+                      [value]="article?.contenu"
+                    ></textarea>
+                    <label for="textarea1">Textarea</label>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <label for="name">Creation</label>
+                <input
+                  type="text"
+                  id="creation"
+                  name="creation"
+                  formControlName="creation"
+                  [value]="article?.creation"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="card-action center">
+            <button
+              type="submit"
+              class="waves-effect waves-light btn"
+              [disabled]="updateForm.invalid"
+            >
+              modifier
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

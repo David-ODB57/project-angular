@@ -1,0 +1,17 @@
+<h1 class="center">{{ title }}</h1>
+<div class="container">
+  <div class="row">
+    <div *ngFor="let comment of commentList" class="col">
+      <div class="card horizontal">
+        <div class="card-stacked">
+          <div class="card-content">
+            <p>{{ comment?.contenu }}</p>
+            <p>
+              <small>{{ comment?.creation }}</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,93 @@
+<h1 class="center">
+  Modification de
+  <span>
+    <b>{{ user?.pseudo | uppercase }}</b>
+  </span>
+</h1>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card horizontal">
+        <div class="card-image">
+          <img
+            [src]="user?.avatar"
+            style="
+              object-fit: cover;
+              aspect-ratio: 1/1;
+              height: 100%;
+              width: 100%;
+            "
+          />
+        </div>
+        <form
+          [formGroup]="updateForm"
+          (ngSubmit)="onSubmitUpdate(updateForm.value)"
+        >
+          <div class="card-stacked">
+            <div class="card-content">
+              <div>
+                <label for="name">Pseudo</label>
+                <input
+                  type="text"
+                  id="pseudo"
+                  name="pseudo"
+                  formControlName="pseudo"
+                  [value]="user?.pseudo"
+                />
+              </div>
+              <div>
+                <label for="name">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  formControlName="email"
+                  [value]="user?.email"
+                />
+              </div>
+              <div>
+                <label for="name">Niveau</label>
+                <input
+                  type="number"
+                  id="email"
+                  name="email"
+                  formControlName="email"
+                  [value]="user?.niveau"
+                />
+              </div>
+              <div>
+                <label for="name">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  formControlName="password"
+                  [value]="user?.password"
+                />
+              </div>
+              <div>
+                <label for="name">Avatar</label>
+                <input
+                  type="url"
+                  id="avatar"
+                  name="avatar"
+                  formControlName="avatar"
+                  [value]="user?.avatar"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="card-action center">
+            <button
+              type="submit"
+              class="waves-effect waves-light btn"
+              [disabled]="updateForm.invalid"
+            >
+              modifier
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

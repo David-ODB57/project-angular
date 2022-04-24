@@ -1,0 +1,6 @@
+<h1>{{ user?.pseudo }}</h1>
+<h2>ID {{ user?.id }}</h2>
+<div class="center" *ngIf="user">
+  <img [src]="user?.avatar" />
+</div>
+<app-user-form></app-user-form>

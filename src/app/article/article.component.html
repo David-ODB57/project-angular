@@ -1,0 +1,19 @@
+<h1 class="center">{{ title }}</h1>
+<div class="container">
+  <!-- par defaut row 12unités de large -->
+  <div class="row">
+    <div *ngFor="let article of articleList" class="col">
+      <div class="card horizontal">
+        <h2>{{ article.titre | uppercase }}</h2>
+        <div class="card-stacked">
+          <div class="card-content">
+            <p>Pseudo: {{ article.contenu }}</p>
+            <p>
+              <small>{{ article.creation }}</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
